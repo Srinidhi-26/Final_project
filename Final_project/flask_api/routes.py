@@ -51,7 +51,7 @@ def accessory():
 
 
         db.session.commit()
-        flash(f'Your product  has been updated!', 'success')
+        flash(f'Your accessory has been added!', 'success')
         return redirect('/Product')
 
     return jsonify('accessory added')
@@ -61,9 +61,9 @@ def accessory():
 def delete():
     type = request.args.get('id')
     if type == 'accessory':
-        pid = request.args.get('p_id')
-        Invent = Invent.query.filter_by(prod_id=pid).delete()
+        pid = request.args.get('id')
+        Invent = Invent.query.filter_by(aid=id).delete()
         db.session.commit()
-        flash(f'Your product  has been deleted!', 'success')
+        flash(f'Your accessory  has been deleted!', 'success')
         return redirect(url_for('accessory'))
     return jsonify('accessory deleted')
