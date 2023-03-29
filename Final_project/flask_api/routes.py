@@ -36,7 +36,7 @@ def login():
     return render_template('login.html', title='Login', form=form)
 
 
-@app.route("/accessory", methods = ['POST'])
+@app.route("/create_accessory", methods = ['POST'])
 def accessory():
     if request.method == 'POST':
 
